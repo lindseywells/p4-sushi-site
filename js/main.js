@@ -1,25 +1,25 @@
+$(document).foundation();
+
+
 (function ($) {
-// VERTICALLY ALIGN FUNCTION
-$.fn.vAlign = function() {
-    return this.each(function(i){
-    var ah = $(this).height();
-    var ph = $(this).parent().height();
-    var mh = Math.ceil((ph-ah) / 2);
-    $(this).css('padding-top', mh);
-    });
+    $.fn.vAlign = function() {
+        return this.each(function(i){
+        var ah = $(this).height();
+        var ph = $(this).parent().height();
+        var mh = Math.ceil((ph-ah) / 2);
+        $(this).css('padding-top', mh);
+        });
 };
+
 })(jQuery);
-$(document).ready(function(){
-	var win_h = $(window).height();
-	function setHeight(){
-		$('.home > .hero').css({height:win_h});
-		$(".vcenter").vAlign();
-	}
+    $(document).ready(function(){
+    	var win_h = $(window).height();
+    	function setHeight(){
+    		$('.home > .hero').css({height:win_h});
+    		$(".vcenter").vAlign();
+    	}
 
 	setHeight();
-	/*$(".slogan h1").slabText({
-	        "viewportBreakpoint":300
-	});*/
 	
 	$(window).bind('resize',function() {
 		setHeight();
@@ -34,13 +34,10 @@ $(document).ready(function(){
         scrollThreshold: 0.5,
         filter: ':not(.external)',
         begin: function() {
-            //Animation Start
         },
         end: function() {
-            //Animation End
         },
         scrollChange: function() {
-            //Pass List Item
         }
     });
 
